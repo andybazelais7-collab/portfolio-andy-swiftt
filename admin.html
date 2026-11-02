@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ht">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ADMIN — ANDY SWIFTT</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0a0a;--card:#16161d;--ink:#ffffff;--gray:#a7a7b5;--line:#26262e;--red:#ff1e1e;--blue:#3b82f6}
+body{background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Space Grotesk','Inter',sans-serif;letter-spacing:-.02em}
+a{color:var(--blue);text-decoration:none}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+header{border-bottom:1px solid var(--line);background:#0d0d12}
+.nav-in{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+.logo{display:flex;align-items:center;gap:11px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:17px}
+.logo img{width:38px;height:38px;border-radius:50%;object-fit:cover;border:1.5px solid #3a3a44}
+.back{font-weight:600;font-size:14px}
+main{padding:36px 0 60px}
+h1{font-size:32px;margin-bottom:6px}
+.sub{color:var(--gray);margin-bottom:28px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;margin-bottom:20px}
+label{display:block;font-weight:600;font-size:14px;margin:14px 0 6px}
+input,select,textarea{width:100%;background:#0a0a0a;border:1.5px solid #3a3a44;border-radius:12px;color:#fff;padding:13px 14px;font-size:16px;font-family:inherit}
+input:focus,select,textarea:focus{outline:none;border-color:var(--blue)}
+textarea{resize:vertical;min-height:70px}
+.btn{display:inline-block;background:var(--red);color:#fff!important;padding:13px 26px;border-radius:999px;font-weight:700;border:none;cursor:pointer;font-size:16px;box-shadow:0 6px 18px rgba(255,30,30,.28)}
+.btn.blue{background:var(--blue);box-shadow:0 6px 18px rgba(59,130,246,.28)}
+.btn.ghost{background:transparent;color:#fff!important;border:1.5px solid #3a3a44;box-shadow:none}
+.btn.small{padding:9px 18px;font-size:14px}
+.err{color:#ff6b6b;font-weight:600;margin-top:12px;display:none}
+.ok{color:#4ade80;font-weight:600;margin-top:12px;display:none}
+.muted{color:var(--gray);font-size:14px}
+.steps{padding-left:20px;color:var(--gray)}
+.steps li{margin-bottom:8px}
+.steps b{color:var(--ink)}
+/* Preview card, same look as the site */
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px;margin-top:20px}
+.icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:19px;color:#fff;margin-bottom:16px}
+.card h3{font-size:22px;margin-bottom:6px}
+.card p{color:var(--gray)}
+.meta{color:var(--gray);font-size:14px;margin-top:12px}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--blue);margin-right:6px}
+.card-foot{border-top:1px solid var(--line);margin-top:20px;padding-top:18px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.status{font-size:13.5px;font-weight:700;color:#d4d4dc}
+pre{white-space:pre-wrap;word-break:break-all;background:#0a0a0a;border:1.5px solid #3a3a44;border-radius:12px;padding:14px;font-size:12.5px;color:#d4d4dc;margin-top:14px;font-family:ui-monospace,Menlo,monospace}
+.hist-item{display:flex;justify-content:space-between;gap:12px;align-items:center;border-top:1px solid var(--line);padding:12px 0}
+.hist-item:first-child{border-top:none}
+.hist-item b{display:block}
+.hist-item span{color:var(--gray);font-size:13.5px;word-break:break-all}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav-in">
+    <div class="logo"><img src="profile.jpg" alt="ANDY SWIFTT"> ANDY SWIFTT — ADMIN</div>
+    <a class="back" href="index.html">← Retounen sou sit la</a>
+  </div>
+</header>
+
+<main class="wrap">
+  <!-- GATE -->
+  <div class="box" id="gateBox">
+    <h1>Antre</h1>
+    <p class="sub">Paj sa a pou ou sèlman. Mete modpas admin lan.</p>
+    <form id="gateForm">
+      <label for="pw">Modpas</label>
+      <input type="password" id="pw" autocomplete="current-password" placeholder="••••••••">
+      <div class="row"><button class="btn" type="submit">Antre</button></div>
+      <p class="err" id="gateErr">Modpas la pa bon. Eseye ankò.</p>
+      <p class="err" id="gateNoCrypto">Navigatè sa a pa sipòte verifikasyon an. Louvri paj la sou sit la (https) olye de kòm fichye.</p>
+    </form>
+  </div>
+
+  <!-- PANEL -->
+  <div id="panel" style="display:none">
+    <h1>Ajoute yon lyen</h1>
+    <p class="sub">Ranpli fòm lan, kopye kòd kat la, epi kole l nan <b>index.html</b> (gade etap yo anba).</p>
+
+    <div class="box">
+      <label for="fTitle">Non</label>
+      <input type="text" id="fTitle" placeholder="Egzanp: Nouvo Chèn WhatsApp" maxlength="60">
+      <label for="fUrl">Lyen</label>
+      <input type="url" id="fUrl" placeholder="https://..." inputmode="url">
+      <label for="fCat">Kategori</label>
+      <select id="fCat">
+        <option value="web">Web (sit)</option>
+        <option value="android">Android (aplikasyon)</option>
+        <option value="whatsapp">WhatsApp (chèn / gwoup)</option>
+      </select>
+      <label for="fDesc">Deskripsyon (si ou vle)</label>
+      <textarea id="fDesc" placeholder="Yon fraz kout sou lyen sa a..." maxlength="200"></textarea>
+
+      <div class="row">
+        <button class="btn blue" id="copyBtn" type="button">Kopye kòd kat la</button>
+      </div>
+      <p class="err" id="formErr">Mete non an ak lyen an avan ou kopye.</p>
+      <p class="ok" id="copyOk">Kòd la kopye! Koulye a kole l nan index.html (etap 3 anba).</p>
+
+      <div id="preview"></div>
+      <pre id="codeOut">Ranpli fòm lan pou wè kòd kat la isit la.</pre>
+    </div>
+
+    <div class="box">
+      <h2 style="margin-bottom:10px">Etap yo (sou telefòn)</h2>
+      <ol class="steps">
+        <li>Ranpli fòm lan pi wo a, epi peze <b>Kopye kòd kat la</b>.</li>
+        <li>Ale sou <b>github.com</b> → repo portfolio a → <b>index.html</b> → peze kreyon an (modifye).</li>
+        <li>Chèche <b>NOUVO KAT</b> nan fichye a, epi <b>kole kòd la jis anvan</b> liy sa a.</li>
+        <li>Peze <b>Commit changes</b>. Netlify ap mete sit la ajou (~1 minit). Nouvo kat la ap parèt nan Pwojè.</li>
+      </ol>
+      <p class="muted" style="margin-top:12px">Paj admin lan pa gen lyen sou sit piblik la — se ou sèlman ki konnen adrès li: <b>/admin.html</b>.</p>
+    </div>
+
+    <div class="box">
+      <h2 style="margin-bottom:6px">Lyen mwen te deja ajoute</h2>
+      <p class="muted" style="margin-bottom:10px">Lis sa a rete sou aparèy ou a sèlman (pou w ka kopye kòd la ankò si ou bezwen).</p>
+      <div id="histList"><p class="muted">Poko gen anyen.</p></div>
+      <div class="row">
+        <button class="btn ghost small" id="clearHist" type="button">Efase lis la</button>
+        <button class="btn ghost small" id="logoutBtn" type="button">Sòti</button>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script>
+// HASH modpas la (SHA-256). Modpas la pa ekri jan l ye nan kòd la.
+// Pou chanje modpas, mande SWIFTT AI pou l kalkile nouvo hash la.
+var ADMIN_HASH = "fffc238dd393c8c8cf831842ad9e33a3450d25337bb41a2f5780690db2ca02f7";
+
+function esc(s){
+  return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+}
+function sha256Hex(text){
+  if(!window.crypto || !crypto.subtle) return Promise.reject(new Error("no-crypto"));
+  return crypto.subtle.digest("SHA-256", new TextEncoder().encode(text)).then(function(buf){
+    return Array.prototype.map.call(new Uint8Array(buf), function(b){ return b.toString(16).padStart(2,"0"); }).join("");
+  });
+}
+function showPanel(){
+  document.getElementById("gateBox").style.display = "none";
+  document.getElementById("panel").style.display = "block";
+  renderPreview();
+  renderHist();
+}
+if(sessionStorage.getItem("swiftt_admin") === "1"){ showPanel(); }
+
+document.getElementById("gateForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  var pw = document.getElementById("pw").value;
+  document.getElementById("gateErr").style.display = "none";
+  sha256Hex(pw).then(function(h){
+    if(h === ADMIN_HASH){
+      sessionStorage.setItem("swiftt_admin", "1");
+      showPanel();
+    } else {
+      document.getElementById("gateErr").style.display = "block";
+    }
+  }).catch(function(){
+    document.getElementById("gateNoCrypto").style.display = "block";
+  });
+});
+
+var CAT = {
+  web:      { label: "Web",      color: "#3b82f6", cat: "web" },
+  android:  { label: "Android",  color: "#ff1e1e", cat: "android" },
+  whatsapp: { label: "WhatsApp", color: "#3b82f6", cat: "whatsapp" }
+};
+
+function getData(){
+  var title = document.getElementById("fTitle").value.trim();
+  var url = document.getElementById("fUrl").value.trim();
+  if(url && !/^https?:\/\//i.test(url)){ url = "https://" + url; }
+  var catKey = document.getElementById("fCat").value;
+  var desc = document.getElementById("fDesc").value.trim();
+  return { title: title, url: url, catKey: catKey, desc: desc };
+}
+function cardCode(d){
+  var c = CAT[d.catKey];
+  var letters = (d.title.replace(/[^A-Za-zÀ-ÿ0-9]/g, "") || "••").substring(0, 2).toUpperCase();
+  var desc = d.desc || d.title;
+  return '      <div class="card reveal" data-cat="' + c.cat + '">\n'
+    + '        <div class="icon" style="background:' + c.color + '">' + esc(letters) + '</div>\n'
+    + '        <h3>' + esc(d.title) + '</h3>\n'
+    + '        <p>' + esc(desc) + '</p>\n'
+    + '        <div class="meta">' + c.label + '</div>\n'
+    + '        <div class="card-foot"><a class="btn" href="' + esc(d.url) + '" target="_blank" rel="noopener">Ouvrir ↗</a><span class="status"><span class="dot"></span>EN LIGNE</span></div>\n'
+    + '      </div>';
+}
+function previewHtml(d){
+  var c = CAT[d.catKey];
+  var letters = (d.title.replace(/[^A-Za-zÀ-ÿ0-9]/g, "") || "••").substring(0, 2).toUpperCase();
+  var desc = d.desc || d.title || "Deskripsyon an ap parèt isit la.";
+  return '<div class="card"><div class="icon" style="background:' + c.color + '">' + esc(letters) + '</div>'
+    + '<h3>' + esc(d.title || "Non an ap parèt isit la.") + '</h3>'
+    + '<p>' + esc(desc) + '</p>'
+    + '<div class="meta">' + c.label + '</div>'
+    + '<div class="card-foot"><a class="btn" href="' + esc(d.url || "#") + '" target="_blank" rel="noopener">Ouvrir ↗</a><span class="status"><span class="dot"></span>EN LIGNE</span></div></div>';
+}
+function renderPreview(){
+  var d = getData();
+  document.getElementById("preview").innerHTML = previewHtml(d);
+  document.getElementById("codeOut").textContent = (d.title && d.url) ? cardCode(d) : "Ranpli non an ak lyen an pou wè kòd kat la isit la.";
+}
+["fTitle", "fUrl", "fCat", "fDesc"].forEach(function(id){
+  document.getElementById(id).addEventListener("input", renderPreview);
+});
+
+function copyText(text, done){
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(done).catch(function(){ fallbackCopy(text, done); });
+  } else {
+    fallbackCopy(text, done);
+  }
+}
+function fallbackCopy(text, done){
+  var ta = document.createElement("textarea");
+  ta.value = text;
+  ta.style.position = "fixed"; ta.style.opacity = "0";
+  document.body.appendChild(ta);
+  ta.select();
+  try { document.execCommand("copy"); } catch(e) {}
+  document.body.removeChild(ta);
+  done();
+}
+function saveHist(d){
+  try {
+    var list = JSON.parse(localStorage.getItem("swiftt_admin_links") || "[]");
+    list.unshift({ t: d.title, u: d.url, c: d.catKey, d: d.desc, at: new Date().toLocaleDateString() });
+    localStorage.setItem("swiftt_admin_links", JSON.stringify(list.slice(0, 50)));
+  } catch(e) {}
+}
+function renderHist(){
+  var box = document.getElementById("histList");
+  var list = [];
+  try { list = JSON.parse(localStorage.getItem("swiftt_admin_links") || "[]"); } catch(e) {}
+  if(!list.length){ box.innerHTML = '<p class="muted">Poko gen anyen.</p>'; return; }
+  box.innerHTML = list.map(function(it, i){
+    return '<div class="hist-item"><div><b>' + esc(it.t) + '</b><span>' + esc(it.u) + ' · ' + esc(CAT[it.c] ? CAT[it.c].label : it.c) + ' · ' + esc(it.at || "") + '</span></div>'
+      + '<button class="btn blue small" type="button" data-i="' + i + '">Kopye</button></div>';
+  }).join("");
+  box.querySelectorAll("button[data-i]").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var it = list[parseInt(btn.getAttribute("data-i"), 10)];
+      copyText(cardCode({ title: it.t, url: it.u, catKey: it.c, desc: it.d || "" }), function(){
+        btn.textContent = "Kopye!";
+        setTimeout(function(){ btn.textContent = "Kopye"; }, 1500);
+      });
+    });
+  });
+}
+document.getElementById("copyBtn").addEventListener("click", function(){
+  var d = getData();
+  document.getElementById("formErr").style.display = "none";
+  document.getElementById("copyOk").style.display = "none";
+  if(!d.title || !d.url){
+    document.getElementById("formErr").style.display = "block";
+    return;
+  }
+  copyText(cardCode(d), function(){
+    saveHist(d);
+    renderHist();
+    document.getElementById("copyOk").style.display = "block";
+  });
+});
+document.getElementById("clearHist").addEventListener("click", function(){
+  try { localStorage.removeItem("swiftt_admin_links"); } catch(e) {}
+  renderHist();
+});
+document.getElementById("logoutBtn").addEventListener("click", function(){
+  sessionStorage.removeItem("swiftt_admin");
+  location.reload();
+});
+</script>
+</body>
+</html>
